@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Files</title>
+    <link rel="stylesheet" href="5.css">
+    <script src="5.js" defer></script>
+    <!-- <link href="path/to/font-awesome/css/font-awesome.min.css"> -->
+</head>
+<body>
+    <button onclick="showAssets()">Show Assets list</button>
+    <button onclick="addAssetManually()">Add Asset manually</button>
+    <input type="file" onchange="addAssetByFile(this)">
+    <input type="text" onkeyup="searchAssets()" id="search" placeholder="Search File">
+    <div class="filter">
+        <span>filter by</span>
+        <div id="assetType">
+            
+        </div>
+    </div>
+    <div class="filter">
+        <span>sort by</span>
+        <input type="radio" name="sort" id="default" value="default" checked>
+        <label for="default">default</label>
+        <input type="radio" name="sort" id="date" value="date">
+        <label for="date">date</label>
+        <input type="radio" name="sort" id="username" value="username">
+        <label for="username">username</label>
+    </div>
+    <div class="upload">
+        <p>(Drag files here to upload)</p>
+    </div>
+    <ol id="assetData">
+
+    </ol>
+
+    <div class="tag">
+        <h3>Add Tag</h3>
+        <div class="production">
+            <p>Production</p>
+            <input type="radio" name="pro_tag" id="pro101">
+            <label for="pro101">release 101</label>
+            <input type="radio" name="pro_tag" id="pro102">
+            <label for="pro102">release 102</label>
+            <input type="radio" name="pro_tag" id="pro103">
+            <label for="pro103">release 103</label>
+        </div>
+        <div class="dev">
+            <p>Dev</p>
+            <input type="radio" name="dev_tag" id="dev101">
+            <label for="dev101">release 101</label>
+            <input type="radio" name="dev_tag" id="dev102">
+            <label for="dev102">release 102</label>
+            <input type="radio" name="dev_tag" id="dev103">
+            <label for="dev103">release 103</label>
+        </div>
+        <div class="qa">
+            <p>Production</p>
+            <input type="radio" name="qa_tag" id="qa101">
+            <label for="qa101">release 101</label>
+            <input type="radio" name="qa_tag" id="qa102">
+            <label for="qa102">release 102</label>
+            <input type="radio" name="qa_tag" id="qa103">
+            <label for="qa103">release 103</label>
+        </div>
+        <div class="tagAction">
+            <button class="tagButton" onclick="togglePopUp()">Cancel</button>
+            <button class="tagButton" onclick="addTag()">Confirm</button>
+        </div>
+    </div>
+</body>
+</html>
